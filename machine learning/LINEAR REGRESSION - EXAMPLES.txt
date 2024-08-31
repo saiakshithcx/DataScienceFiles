@@ -1,0 +1,442 @@
+-------------------------
+LinearRegression Examples
+-------------------------
+1. Housing Prices
+
+Predicting housing prices based on size, number of bedrooms, and age of the house.
+
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+
+# Sample data
+data = {
+    'Size': [1500, 1600, 1700, 1800, 1900],
+    'Bedrooms': [3, 3, 3, 4, 4],
+    'Age': [10, 15, 20, 25, 30],
+    'Price': [300000, 320000, 340000, 360000, 380000]
+}
+
+# Create DataFrame
+df = pd.DataFrame(data)
+
+# Features and target variable
+X = df[['Size', 'Bedrooms', 'Age']]
+y = df['Price']
+
+# Split the data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Initialize the model
+model = LinearRegression()
+
+# Train the model
+model.fit(X_train, y_train)
+
+# Make predictions
+y_pred = model.predict(X_test)
+
+print()
+print(y_pred)
+
+----------------------------------------------------------------------------------
+
+2. Employee Salary
+
+Predicting employee salaries based on years of experience, education level, and job role.
+
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+
+
+# Sample data
+data = {
+    'Experience': [1, 3, 5, 7, 9],
+    'Education': [1, 2, 2, 3, 3],  # 1: Bachelor's, 2: Master's, 3: PhD
+    'Role': [1, 2, 2, 3, 3],       # 1: Junior, 2: Mid, 3: Senior
+    'Salary': [40000, 50000, 60000, 70000, 80000]
+}
+
+# Create DataFrame
+df = pd.DataFrame(data)
+
+# Features and target variable
+X = df[['Experience', 'Education', 'Role']]
+y = df['Salary']
+
+# Split the data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Initialize the model
+model = LinearRegression()
+
+# Train the model
+model.fit(X_train, y_train)
+
+# Make predictions
+y_pred = model.predict(X_test)
+
+print()
+print(y_pred)
+
+----------------------------------------------------------------------------------
+
+3. Car Prices
+
+Predicting car prices based on mileage, age, and brand.
+
+
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+
+# Sample data
+data = {
+    'Mileage': [15000, 30000, 45000, 60000, 75000],
+    'Age': [1, 2, 3, 4, 5],
+    'Brand': [1, 1, 2, 2, 3],  # 1: Toyota, 2: Honda, 3: BMW
+    'Price': [20000, 18000, 16000, 14000, 12000]
+}
+
+# Create DataFrame
+df = pd.DataFrame(data)
+
+# Features and target variable
+X = df[['Mileage', 'Age', 'Brand']]
+y = df['Price']
+
+# Split the data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Initialize the model
+model = LinearRegression()
+
+# Train the model
+model.fit(X_train, y_train)
+
+# Make predictions
+y_pred = model.predict(X_test)
+
+print()
+print(y_pred)
+
+----------------------------------------------------------------------------------
+
+4. Stock Prices
+
+Predicting stock prices based on previous day's prices, trading volume, and market index.
+
+
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+
+
+# Sample data
+data = {
+    'PrevClose': [100, 102, 104, 106, 108],
+    'Volume': [2000, 2100, 2200, 2300, 2400],
+    'MarketIndex': [3000, 3100, 3200, 3300, 3400],
+    'Close': [101, 103, 105, 107, 109]
+}
+
+# Create DataFrame
+df = pd.DataFrame(data)
+
+# Features and target variable
+X = df[['PrevClose', 'Volume', 'MarketIndex']]
+y = df['Close']
+
+# Split the data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Initialize the model
+model = LinearRegression()
+
+# Train the model
+model.fit(X_train, y_train)
+
+# Make predictions
+y_pred = model.predict(X_test)
+
+print()
+print(y_pred)
+
+
+----------------------------------------------------------------------------------
+
+5. Marketing Spend
+
+Predicting sales based on TV, radio, and newspaper advertising spend.
+
+
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+
+# Sample data
+data = {
+    'TV': [100, 150, 200, 250, 300],
+    'Radio': [20, 30, 40, 50, 60],
+    'Newspaper': [10, 20, 30, 40, 50],
+    'Sales': [10, 15, 20, 25, 30]
+}
+
+# Create DataFrame
+df = pd.DataFrame(data)
+
+# Features and target variable
+X = df[['TV', 'Radio', 'Newspaper']]
+y = df['Sales']
+
+# Split the data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Initialize the model
+model = LinearRegression()
+
+# Train the model
+model.fit(X_train, y_train)
+
+# Make predictions
+y_pred = model.predict(X_test)
+
+print()
+print(y_pred)
+
+
+----------------------------------------------------------------------------------
+
+6. Student Performance
+
+Predicting student test scores based on study hours, attendance, and previous grades.
+
+
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+
+
+# Sample data
+data = {
+    'StudyHours': [5, 10, 15, 20, 25],
+    'Attendance': [90, 80, 70, 60, 50],
+    'PreviousGrades': [80, 85, 70, 75, 90],
+    'TestScore': [85, 80, 75, 70, 65]
+}
+
+# Create DataFrame
+df = pd.DataFrame(data)
+
+# Features and target variable
+X = df[['StudyHours', 'Attendance', 'PreviousGrades']]
+y = df['TestScore']
+
+# Split the data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Initialize the model
+model = LinearRegression()
+
+# Train the model
+model.fit(X_train, y_train)
+
+# Make predictions
+y_pred = model.predict(X_test)
+
+print()
+print(y_pred)
+
+
+
+----------------------------------------------------------------------------------
+
+7. House Rental Prices
+
+Predicting rental prices based on location, number of rooms, and square footage.
+
+
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+
+# Sample data
+data = {
+    'Location': [1, 2, 3, 4, 5],  # Categorical: 1 to 5
+    'Rooms': [2, 3, 4, 5, 6],
+    'SquareFootage': [800, 1000, 1200, 1400, 1600],
+    'RentalPrice': [1500, 2000, 2500, 3000, 3500]
+}
+
+# Create DataFrame
+df = pd.DataFrame(data)
+
+# Features and target variable
+X = df[['Location', 'Rooms', 'SquareFootage']]
+y = df['RentalPrice']
+
+# Split the data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Initialize the model
+model = LinearRegression()
+
+# Train the model
+model.fit(X_train, y_train)
+
+# Make predictions
+y_pred = model.predict(X_test)
+
+print()
+print(y_pred)
+
+
+
+----------------------------------------------------------------------------------
+
+8. Medical Costs
+
+Predicting medical costs based on age, BMI, and number of children.
+
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+
+
+# Sample data
+data = {
+    'Age': [25, 35, 45, 55, 65],
+    'BMI': [22, 24, 26, 28, 30],
+    'Children': [0, 1, 2, 3, 4],
+    'MedicalCost': [2000, 4000, 6000, 8000, 10000]
+}
+
+# Create DataFrame
+df = pd.DataFrame(data)
+
+# Features and target variable
+X = df[['Age', 'BMI', 'Children']]
+y = df['MedicalCost']
+
+# Split the data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Initialize the model
+model = LinearRegression()
+
+# Train the model
+model.fit(X_train, y_train)
+
+# Make predictions
+y_pred = model.predict(X_test)
+
+print()
+print(y_pred)
+
+
+
+----------------------------------------------------------------------------------
+
+9. Energy Consumption
+
+Predicting energy consumption based on temperature, humidity, and wind speed.
+
+
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+
+# Sample data
+data = {
+    'Temperature': [70, 75, 80, 85, 90],
+    'Humidity': [30, 35, 40, 45, 50],
+    'WindSpeed': [10, 12, 14, 16, 18],
+    'EnergyConsumption': [150, 200, 250, 300, 350]
+}
+
+# Create DataFrame
+df = pd.DataFrame(data)
+
+# Features and target variable
+X = df[['Temperature', 'Humidity', 'WindSpeed']]
+y = df['EnergyConsumption']
+
+# Split the data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Initialize the model
+model = LinearRegression()
+
+# Train the model
+model.fit(X_train, y_train)
+
+# Make predictions
+y_pred = model.predict(X_test)
+
+print()
+print(y_pred)
+
+
+
+----------------------------------------------------------------------------------
+
+10. E-commerce Sales
+
+Predicting e-commerce sales based on website traffic, number of promotions, and average product price.
+
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+
+# Sample data
+data = {
+    'Traffic': [1000, 1500, 2000, 2500, 3000],
+    'Promotions': [1, 2, 3, 4, 5],
+    'AvgPrice': [20, 25, 30, 35, 40],
+    'Sales': [5000, 7000, 9000, 11000, 13000]
+}
+
+# Create DataFrame
+df = pd.DataFrame(data)
+
+# Features and target variable
+X = df[['Traffic', 'Promotions', 'AvgPrice']]
+y = df['Sales']
+
+# Split the data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Initialize the model
+model = LinearRegression()
+
+# Train the model
+model.fit(X_train, y_train)
+
+# Make predictions
+y_pred = model.predict(X_test)
+
+# Evaluate the model
+mse = mean_squared_error(y_test, y_pred)
+r2 = r2_score(y_test, y_pred)
+
+print(f"Mean Squared Error: {mse}")
+print(f"R^2 Score: {r2}")
+
+# Display coefficients
+coefficients = pd.DataFrame(model.coef_, X.columns, columns=['Coefficient'])
+print(coefficients)
+
+# Predict on new data
+new_data = pd.DataFrame({
+    'Traffic': [3500, 4000],
+    'Promotions': [6, 7],
+    'AvgPrice': [45, 50]
+})
+
+predictions = model.predict(new_data)
+print("Predicted Sales:", predictions)
+
+
+----------------------------------------------------------------------------------
+
